@@ -28,7 +28,7 @@ def guessTheNumber(numOfGuesses, targNum):
 
 	if guess == targNum:
 		tempNumOfGuesses = str(tempNumOfGuesses)
-		print("Good job, " + userName +"! You guessed the right number in " + tempNumOfGuesses + " tries!")
+		print("Good job, " + userName +"! You guessed the right number in " + tempNumOfGuesses + " try(s)!")
 
 	if guess != targNum:
 		targNum = str(targNum)
