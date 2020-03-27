@@ -1,41 +1,40 @@
 #Using binary search algorithm to check if a number exists in a list
 
-# def bin_search(numList, num):
-# 	#Sorting the list
-# 	numList = numList.sort()
-# 	#Getting the position for the splitting to occur
-# 	half = len(numList)//2
+# Doing this with recursion
+def bin_searchR(numList, num, low = 0, high = None):
+	#Sorting the list
+	numList = sorted(numList)
 
-# 	#First half of the list
-# 	firstList = numList[:half]
+	if high is None: 
+		high = len(numList) - 1
 
-# 	#Second half of the list 
-# 	secondList = numList[half:]
+	found = False
+	if low > high: 
+		return found
 
-# 	#Getting the last element in the first list and comparing that to the element being searched for
+	mid = (low + high) // 2
 
-# 	if num == firstList[-1]: 
-# 		return ("1")
-# 	elif num < firstList[-1]:
-# 		return (bin_search(numList, num))
+	if num == numList[mid]:
+		found = True
+		return found
+	else:
+		if num < numList[mid]:
+			return (bin_searchR(numList,num,low, mid - 1))
+		else:
+			return(bin_searchR(numList, num, mid + 1, high))
 
-# 	elif num >= secondList[-1]:
-# 		return (bin_search(numList, num))
+    
+   
 
-# 	else:
-# 		return -1
+arr = [1,2,3,4,5,6]
 
+x = 78
 
-
-# arr = [1,2,3,4,5,6]
-
-
-
-# x = 3 
-
-# print(bin_search(arr,x))
+print(bin_searchR(arr,x))
 
 
+
+# Then, doing it iteratively 
 
 def bin_search(numList, num):
 
