@@ -8,10 +8,14 @@ def bin_searchR(numList, num, low = 0, high = None):
 	if high is None: 
 		high = len(numList) - 1
 
+	# Create a variable to represent the binary respone that the function gives
 	found = False
+
+	#Edge case
 	if low > high: 
 		return found
 
+	#Create a variable which represents the middle index at any given time
 	mid = (low + high) // 2
 
 	if num == numList[mid]:
