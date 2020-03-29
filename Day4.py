@@ -26,17 +26,17 @@
 
 def is_Nigerian(phoneNum):
 	telcoPrefixes = ["0703", "0706", "0803", "0806", "0810", "0813", "0814", "0816", "0903", "0705", "0805", "0811", "0815", "0905", "0701", "0708", "0802", "0808", "0812", "0902", "0809", "0817", "0818", "0909", "0804"]
+	telcoPrefixes1 = ["703", "706", "803", "806", "810", "813", "814", "016", "903", "705", "805", "811", "815", "905", "701", "708", "802", "808", "812", "902", "809", "817", "818", "909", "804"]
 	
-
 	if(len(phoneNum) == 11 and phoneNum[0:4] in telcoPrefixes):
 		return ("This phone number is valid" + ": " + phoneNum)
 	elif (len(phoneNum) == 13 and phoneNum[0:3] == "234"):
 		return ("This phone number is valid" + ": " + phoneNum)
-	elif (len(phoneNum) == 14 and phoneNum[0:4] == "+234"):
+	elif (len(phoneNum) == 14 and phoneNum[0:4] == "+234" and phoneNum[4:7] in telcoPrefixes1):
 		return ("This phone number is valid" + ": " + phoneNum)
 	elif (len(phoneNum) == 14 and phoneNum[0:4] == "2340"):
 		return ("This phone number is valid" + ": " + phoneNum)
-	elif (len(phoneNum) == 15 and phoneNum[0:5] == "+2340"):
+	elif (len(phoneNum) == 15 and phoneNum[0:5] == "+2340" and phoneNum[5:8] in telcoPrefixes1):
 		return ("This phone number is valid" + ": " + phoneNum)
 	
 	else:
@@ -47,6 +47,7 @@ def is_Nigerian(phoneNum):
 print(is_Nigerian("23408123884098"))
 print(is_Nigerian("2348123884098"))
 print(is_Nigerian("+2348123884098"))
+print(is_Nigerian("+2348823884098"))
 print(is_Nigerian("+23408123884098"))
 print(is_Nigerian("08123884098"))
 
