@@ -1,39 +1,40 @@
-# # This function returns the nth faithful number
+"""
+This function returns the nth faithful number
+"""
 
-# def faithful(n):
-
-# 	pow = 0
-# 	answer = 1
-
-
-# 	#Go through every n - like recursion
-# 	while(n):
-
-# 		pow = pow * 7
-
-# 		#If n is an odd number
-
-# 		if (n % 2 != 0):
-# 			answer = answer + pow 
+import math
 
 
-# 		# This next line of code handles decimals (should there be any)
+def faithful(n):
+	if ( n == 1 ): 
+		{
+		print("1")
+		}
 
-# 		n >>=  1
+	elif((math.log(n)/math.log(2)) % 1 == 0):
+		{
+		power = int((math.log(n)/math.log(2)) /1)
+		retVal = int(math.pow(7,power))
 
-# 	return answer
+		print(retVal)
+		}
+
+	# Creating a set of dummy variable to handle cases beside when n is 1 or when n is a perfect 2
+	prev = 1
+	nex = 1
+	diff = 0
+
+	while(nex < n):
+		{
+		prev = nex
+		nex = nex * 2
+		}
+
+	diff = n - prev
+
+	print(faithful(diff) + faithful(prev))
 
 
+# faithful(1)
 
-# print(faithful(1))
-for _ in range(1, 10):
-    n = int(input())
-    a = []
-    while(n>0):
-        x = int(math.log(n,2))
-        n-=(2**x)
-        a.append(x)
-    summ=0
-    for i in a:
-        summ+=(7**i)
-    print(summ)
+
