@@ -17,7 +17,7 @@ def Hangman(word, trials):
 
 		#Comparing characters in the secret word and those in guesses
 		for ele in word:
-			if ele in guesses:
+			if ele in guessWord:
 				print(ele)
 
 			else:
