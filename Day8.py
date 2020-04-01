@@ -8,6 +8,9 @@ def Hangman(word, trials):
 
 
 	"""
+	# This makes all the elements in the word lowercase
+	word = word.lower()
+
 	print("The number of underscores here tell you how many letters the word that you are to guess has:")
 	# Create a variable which stores the guesses 
 	guessWord = " "
@@ -36,7 +39,7 @@ def Hangman(word, trials):
 
 		# If the user has inputed the wrong character, he/she should input another one
 
-		guess = input("guess a character: " )
+		guess = input("guess a character (use lowercase): " )
 
 		# Keeping track of the number of guesses
 		guessWord += guess
