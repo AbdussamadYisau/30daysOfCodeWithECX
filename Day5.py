@@ -9,6 +9,8 @@ def faithful(n):
 	if (n == 1): 
 		return 1
 
+	# This handles when the nth term is a perfect 2
+
 	elif ((math.log(n)/math.log(2)) % 1 == 0):
 		
 		power = int((math.log(n)/math.log(2)) /1)
