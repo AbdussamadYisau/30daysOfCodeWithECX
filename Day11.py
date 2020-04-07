@@ -7,7 +7,7 @@ def compressor(nums):
     Eg
 
     Input - 11111222222333333
-    Output - (('1', 5), ('2', 6), ('3', 6))
+    Output - ((1, 5), (2, 6), (3, 6))
     
     """
 
@@ -15,7 +15,7 @@ def compressor(nums):
 
     for i in nums:
         count[i] = count.get(i,0) + 1
-    answer = [(k,v) for k,v in count.items()]
+    answer = [(int(k),v) for k,v in count.items()]
 
     answer = tuple(answer)
 
